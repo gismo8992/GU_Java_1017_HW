@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class GU_Java_1017_Homework1 {
+public class Main {
     public static void main (String[] args) {
         byte a0 = 127;
         short a1 = 190;
