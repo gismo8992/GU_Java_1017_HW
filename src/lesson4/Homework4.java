@@ -1,6 +1,7 @@
 package lesson4;
 
 public class Homework4 {
+<<<<<<< HEAD
     public static void main(String[] args) {
         int[][] values = returnMultidimensionalArray();
         drawArray(values);
@@ -110,5 +111,7 @@ public class Homework4 {
 
         return "Bogus season";
     }
+=======
+>>>>>>> Lesson4
 }
 
