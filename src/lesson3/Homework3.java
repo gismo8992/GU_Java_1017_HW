@@ -9,6 +9,7 @@ public class Homework3 {
 
         guessNumber();
         doRecursiveWalk();
+        playGame();
     }
 
     static void guessNumber() {
