@@ -24,12 +24,12 @@ public class Homework3 {
                     break;
                 }
                 int userAnswer = scanerAnswer.nextInt();
-                if (userAnswer == randomNumber) {
+                if (userAnswer > randomNumber) System.out.println("Вы ввели слишком большое число.");
+                else if (userAnswer < randomNumber) System.out.println("Вы ввели слишком маленькое число.");
+                else {
                     System.out.println("Вы угадали загаданное число. Повторить игру еще раз?");
                     break;
                 }
-                else if (userAnswer > randomNumber) System.out.println("Вы ввели слишком большое число.");
-                else if (userAnswer < randomNumber) System.out.println("Вы ввели слишком маленькое число.");
             }
             Scanner game = new Scanner(System.in);
             int answer = game.nextInt();
