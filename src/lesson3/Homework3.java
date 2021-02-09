@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class Homework3 {
 
     public static void main(String[] args) {
+
         guessNumber();
+        doRecursiveWalk();
+        playGame();
     }
 
     static void guessNumber() {
@@ -35,5 +38,60 @@ public class Homework3 {
             int answer = game.nextInt();
             if (answer == 0) break;
         }
+    }
+
+    static void playGame() {
+        String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli",
+                "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango",
+                "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper",
+                "pineapple", "pumpkin", "potato"};
+        Random random = new Random();
+        int randIndex = random.nextInt(words.length);
+
+        String randWord = words[randIndex];
+
+        checkWord(randWord);
+    }
+
+    static void checkWord(String randWord) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input your word...");
+        String userWord = scanner.next();
+
+        if (randWord.equals(userWord)) {
+            System.out.println("Congrats!!! You are winner!");
+            return;
+        }
+
+        for (int i = 0; i < randWord.length() && i < userWord.length(); i++) {
+            if (randWord.charAt(i) == userWord.charAt(i)) {
+                System.out.print(randWord.charAt(i));
+            } else {
+                System.out.print('#');
+            }
+        }
+
+        for (int i = randWord.length(); i < 15; i++) {
+            System.out.print('#');
+        }
+
+        System.out.println("\nGuess word is not equal to PC's word.");
+        System.out.println("Try again.");
+
+        checkWord(randWord);
+    }
+
+
+    static void doRecursiveWalk() {
+        int[] digits = {1, 4, 6, 7, 8};
+        arrayWalk(digits, 0);
+    }
+
+    static void arrayWalk(int[] digits, int index) {
+        if (index == digits.length) {
+            return;
+        }
+        System.out.printf("[%s] => %s %n", index, digits[index]);
+        arrayWalk(digits, ++index);
     }
 }
