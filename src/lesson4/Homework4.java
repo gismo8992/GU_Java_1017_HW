@@ -38,12 +38,12 @@ public class Homework4 {
     }
 
     static boolean isNextMoveAvailable(char[][] field, char sign, String winMessage) {
-        if(isDraw(field)) {
-            System.out.println("There is draw detected. Finish!");
-            return false;
-        }
         if (isWin(field, sign)) {
             System.out.println(winMessage);
+            return false;
+        }
+        if(isDraw(field)) {
+            System.out.println("There is draw detected. Finish!");
             return false;
         }
         return true;
