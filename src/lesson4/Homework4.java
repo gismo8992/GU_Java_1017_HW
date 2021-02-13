@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Homework4 {
     public static void main(String[] args) {
         playGame();
+        /*
+        createSquareSpace(int columne, int row) {  // Функция для создания поля с заданным количеством столбцов с строк (строка 131)
+         */
     }
 
     static void playGame() {
@@ -58,22 +61,15 @@ public class Homework4 {
     }
 
     static boolean isWin(char[][] field, char sign) {
+
         for (int i = 0; i < field.length; i++) {
-            if (field[i][0] == sign && field[i][1] == sign && field[i][2] == sign) {
-                return true;
+            for (int j = 0; j < field.length - 2; j++) {
+                if (field[i][j] == sign && field[i][j+1] == sign && field[i][j+2] == sign) return true;
+                if (field[j][i] == sign && field[j+1][i] == sign && field[j+2][i] == sign) return true;
             }
         }
-        for (int i = 0; i < field.length; i++) {
-            if (field[0][i] == sign && field[1][i] == sign && field[2][i] == sign) {
-                return true;
-            }
-        }
-        if(field[0][0] == sign && field[1][1] == sign && field[2][2] == sign) {
-            return true;
-        }
-        if (field[0][2] == sign && field[1][1] == sign && field[2][0] == sign) {
-            return true;
-        }
+        if(field[0][0] == sign && field[1][1] == sign && field[2][2] == sign) return true;
+        if(field[0][2] == sign && field[1][1] == sign && field[2][0] == sign) return true;
         return false;
     }
 
@@ -130,5 +126,18 @@ public class Homework4 {
             System.out.println();
         }
         System.out.println();
+
+        /*
+        static void createSquareSpace(int columne, int row) {  // Функция для создания поля с заданным количеством столбцов с строк
+            char[][] space = new char[row][columne];
+            for (int i = 0; i < row; i++) {
+                for (int j = 0; j < columne; j++) {
+                    System.out.print(" - ");
+                }
+                System.out.println();
+            }
+        }
+         */
+
     }
 }
