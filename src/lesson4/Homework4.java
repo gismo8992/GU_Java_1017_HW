@@ -63,13 +63,18 @@ public class Homework4 {
     static boolean isWin(char[][] field, char sign) {
 
         for (int i = 0; i < field.length; i++) {
-            for (int j = 0; j < field.length - 2; j++) {
+            for (int j = 0; j < field.length - 3; j++) {
                 if (field[i][j] == sign && field[i][j+1] == sign && field[i][j+2] == sign) return true;
                 if (field[j][i] == sign && field[j+1][i] == sign && field[j+2][i] == sign) return true;
             }
         }
-        if(field[0][0] == sign && field[1][1] == sign && field[2][2] == sign) return true;
-        if(field[0][2] == sign && field[1][1] == sign && field[2][0] == sign) return true;
+
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field.length - 3; j++) {
+                if(field[i][j] == sign && field[i + 1][j + 1] == sign && field[i + 2][j + 2] == sign) return true;
+                if(field[i][j + 2] == sign && field[i + 1][j + 1] == sign && field[i + 2][j] == sign) return true;
+            }
+        }
         return false;
     }
 
