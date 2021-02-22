@@ -24,6 +24,5 @@ public abstract class Animal {
     }
 
     public abstract void running(int distance);
-
     public abstract void swimming(int distance);
 }
