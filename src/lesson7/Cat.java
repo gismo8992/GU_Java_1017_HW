@@ -10,24 +10,18 @@ public class Cat {
         this.appetite = appetite;
         this.satiety = satiety;
     }
-    public boolean eat(Plate p) {
-        p.decreaseFood(appetite);
-        if (satiety > 0) {
+    public void eat(Plate p) {
+        if(p.decreaseFood(appetite)) {
+            System.out.println(name + " ate.");
+            satiety +=appetite;
         }
-        else {
-            System.out.println("Не хватило еды этому коту (");
-            return false;
-        }
-        return true;
     }
 
-
-    public void setAppetite(int appetite) {
-        this.appetite = appetite;
+    public void satietyCatInfo() {
+        System.out.println("Satiety " + name + ": " + getSatiety());
     }
 
-    public int getAppetite() {
-        return appetite;
+    public int getSatiety() {
+        return satiety;
     }
-
 }

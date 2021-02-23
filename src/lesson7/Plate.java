@@ -7,15 +7,22 @@ public class Plate {
         this.food = food;
     }
     public void info() {
-        System.out.println("plate: " + food);
+        System.out.println("Plate: " + food);
     }
 
-    public void decreaseFood(int n) {
-        food -= n;
-        if(food < 0) {
-            System.out.println("Plate is empty :(");
-            food = 0;
+    public boolean decreaseFood(int n) {
+        if((food - n) < 0) {
+            System.out.println("Food is not enough :(");
+            return false;
         }
+        else {
+            food -= n;
+            return true;
+        }
+    }
+
+    public void encreaseFood(int addFood) {
+        food += addFood;
     }
 
     public int getFood() {
