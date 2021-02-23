@@ -24,14 +24,5 @@ public class Plate {
     public void encreaseFood(int addFood) {
         food += addFood;
     }
-
-    public int getFood() {
-        return food;
-    }
-
-    public void setFood(int food) {
-        this.food = food;
-    }
-
 }
 
