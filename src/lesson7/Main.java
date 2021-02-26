@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Plate plate1 = new Plate(30);
         satietyInfo(catEating(catsArray(), plate1));
-        plate1.encreaseFood(100);
+        plate1.encreaseFood(0);
         plate1.info();
         }
 

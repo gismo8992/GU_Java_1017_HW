@@ -11,9 +11,9 @@ public class Cat {
         this.satiety = satiety;
     }
     public void eat(Plate p) {
-        if (p.decreaseFood(appetite)) {
+        satiety = p.decreaseFood(appetite);
+        if (satiety) {
             System.out.println(name + " ate.");
-            satiety = true;
         }
     }
 
