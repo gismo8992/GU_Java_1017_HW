@@ -63,8 +63,8 @@ public class BottomFrame {
         result.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            Calculate result = new Calculate();
-
+            StringCalculation calculation = new StringCalculation();
+            inputField.setText(calculation.result(inputField.getText()));
             }
         });
         panel.add(result);
