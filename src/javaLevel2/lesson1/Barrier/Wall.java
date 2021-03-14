@@ -6,7 +6,6 @@ import javaLevel2.lesson1.Participant.Participant;
 
 public class Wall implements Barrier {
     private final int height;
-    private boolean onDistance;
 
     public Wall(int height) {
         this.height = height;

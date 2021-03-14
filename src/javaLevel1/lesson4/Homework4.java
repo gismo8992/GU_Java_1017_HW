@@ -1,4 +1,4 @@
-package lesson4;
+package javaLevel1.lesson4;
 
 import java.util.Random;
 import java.util.Scanner;
