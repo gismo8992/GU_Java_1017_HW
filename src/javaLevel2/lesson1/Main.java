@@ -1,4 +1,4 @@
-package javaLevel2;
+package javaLevel2.lesson1;
 
 import javaLevel2.lesson1.Barrier.Barrier;
 import javaLevel2.lesson1.Barrier.Course;
