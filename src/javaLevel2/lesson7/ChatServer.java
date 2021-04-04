@@ -36,15 +36,15 @@ class ChatServer {
         }
     }
 
-    public void subscribe(ClientHandler clientHandler) {
+    public synchronized void subscribe(ClientHandler clientHandler) {
         loggedClients.add(clientHandler);
     }
 
-    public void unsubscribe(ClientHandler clientHandler) {
+    public synchronized void unsubscribe(ClientHandler clientHandler) {
         loggedClients.remove(clientHandler);
     }
 
-    public boolean isLoggedIn(String name) {
+    public synchronized boolean isLoggedIn(String name) {
         /*
         Iterator<ClientHandler> iterator = loggedClients.iterator();
         while (iterator.hasNext()) {
