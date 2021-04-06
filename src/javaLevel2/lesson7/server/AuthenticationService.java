@@ -1,4 +1,4 @@
-package javaLevel2.lesson7;
+package javaLevel2.lesson7.server;
 
 import java.util.Optional;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package javaLevel2.lesson7;
+package javaLevel2.lesson7.server;
 
 public class ChatServerException extends RuntimeException{
 

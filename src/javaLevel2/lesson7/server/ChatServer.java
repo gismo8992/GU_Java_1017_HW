@@ -1,4 +1,4 @@
-package javaLevel2.lesson7;
+package javaLevel2.lesson7.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
 
-class ChatServer {
+public class ChatServer {
     private final AuthenticationService authenticationService;
     private final Set<ClientHandler> loggedClients;
 
@@ -14,7 +14,7 @@ class ChatServer {
         authenticationService = new AuthenticationService();
         loggedClients = new HashSet<>();
         try {
-            ServerSocket socket = new ServerSocket(8080);
+            ServerSocket socket = new ServerSocket(8585);
             System.out.println("Server is running up...");
             while (true) {
                 System.out.println("Waiting for a connection...");
