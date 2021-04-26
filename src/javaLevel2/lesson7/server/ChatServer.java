@@ -9,9 +9,11 @@ import java.util.Set;
 public class ChatServer {
     private final AuthenticationService authenticationService;
     private final Set<ClientHandler> loggedClients;
+    private final UserRepository repository;
 
     public ChatServer() {
-        authenticationService = new AuthenticationService();
+        authenticationService = new AuthenticationService(getRepository());
+        repository = getRepository();
         loggedClients = new HashSet<>();
         try {
             ServerSocket socket = new ServerSocket(8585);
@@ -59,6 +61,10 @@ public class ChatServer {
                 .filter(client -> client.getName().equals(name))
                 .findFirst()
                 .isPresent();
+    }
+
+    public UserRepository getRepository() {
+        return repository;
     }
 }
 

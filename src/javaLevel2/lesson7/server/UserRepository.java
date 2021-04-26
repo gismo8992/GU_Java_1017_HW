@@ -19,7 +19,7 @@ public class UserRepository {
 
             ResultSet rs = preparedStatement.executeQuery(); // выполняем запрос и получаем записи из базы данных
             if(rs.next()) {
-                Optional.of(
+                return Optional.of(
                         new User(
                                 rs.getString("login"),
                                 rs.getString("password"),
@@ -27,8 +27,6 @@ public class UserRepository {
                         )
                 );
             }
-
-
         } catch (SQLException sqlExeption) {
             throw new RuntimeException("SWW", sqlExeption);
         }

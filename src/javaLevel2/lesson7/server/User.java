@@ -3,11 +3,23 @@ package javaLevel2.lesson7.server;
 public class User {
     private String login;
     private String password;
-    private String nickname;
+    private String name;
 
-    public User(String login, String password, String nickname) {
+    public User(String login, String password, String name) {
         this.login = login;
         this.password = password;
-        this.nickname = nickname;
+        this.name = name;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getName() {
+        return name;
     }
 }

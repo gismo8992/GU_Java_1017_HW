@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DBConnection {
     public static Connection getInstance() {
         try {
-            return DriverManager.getConnection("jdbc:mysql://localhost8899/USERS", "user", ""); // USER - data base
+            return DriverManager.getConnection("jdbc:mysql://localhost8899/STUDENTS_TEST", "user", ""); // USER - data base
         }
         catch (SQLException e) {
             throw new RuntimeException(e);
