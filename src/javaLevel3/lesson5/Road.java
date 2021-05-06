@@ -14,6 +14,9 @@ public class Road extends Stage {
             Thread.sleep(length / c.getSpeed() * 1000);
             MainClass.roadStage.await();
             System.out.println(c.getName() + " закончил этап: " + description);
+            if(this.length == 40) {
+                MainClass.finishLine.countDown();
+            }
         } catch (InterruptedException | BrokenBarrierException e) {
             e.printStackTrace();
         }
